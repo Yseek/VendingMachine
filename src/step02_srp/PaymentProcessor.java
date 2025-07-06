@@ -18,7 +18,13 @@ public class PaymentProcessor {
     public void processPayment(int price) {
         int change = currentMoney - price;
         this.currentMoney = change;
-        System.out.println(STR."거스름돈: \{change}원");
+        System.out.println(STR."잔액: \{change}원");
+    }
+
+    public void returnChange() {
+        System.out.println(STR."거스름돈: \{currentMoney}원");
+        this.currentMoney = 0;
+        System.out.println(STR."머신 잔액: \{currentMoney}원");
     }
 
     public int getCurrentMoney() {

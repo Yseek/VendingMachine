@@ -47,4 +47,16 @@ class PaymentProcessorTest {
         //then
         assertThat(paymentProcessor.isPaymentSufficient(2000)).isEqualTo(false);
     }
+
+    @Test
+    @DisplayName("")
+    void returnChange() {
+        //given
+        int money = 2000;
+        //when
+        paymentProcessor.insertMoney(money);
+        paymentProcessor.returnChange();
+        //then
+        assertThat(paymentProcessor.getCurrentMoney()).isEqualTo(0);
+    }
 }
